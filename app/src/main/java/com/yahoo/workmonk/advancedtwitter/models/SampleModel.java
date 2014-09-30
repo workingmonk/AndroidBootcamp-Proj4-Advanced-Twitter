@@ -1,4 +1,4 @@
-package com.yahoo.workmonk.basictwitter.models;
+package com.yahoo.workmonk.advancedtwitter.models;
 
 import java.util.List;
 

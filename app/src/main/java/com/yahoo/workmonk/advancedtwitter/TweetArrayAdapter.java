@@ -1,4 +1,4 @@
-package com.yahoo.workmonk.basictwitter;
+package com.yahoo.workmonk.advancedtwitter;
 
 import android.content.Context;
 import android.text.format.DateUtils;
@@ -7,11 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.yahoo.workmonk.basictwitter.models.Tweet;
+import com.yahoo.workmonk.advancedtwitter.models.Tweet;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

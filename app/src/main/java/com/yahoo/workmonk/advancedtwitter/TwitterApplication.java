@@ -1,4 +1,4 @@
-package com.yahoo.workmonk.basictwitter;
+package com.yahoo.workmonk.advancedtwitter;
 
 import android.content.Context;
 

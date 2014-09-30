@@ -1,4 +1,4 @@
-package com.yahoo.workmonk.basictwitter;
+package com.yahoo.workmonk.advancedtwitter;
 
 import org.scribe.builder.api.Api;
 import org.scribe.builder.api.TwitterApi;
@@ -7,6 +7,7 @@ import android.content.Context;
 
 import com.codepath.oauth.OAuthBaseClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 /*
@@ -46,6 +47,13 @@ public class TwitterClient extends OAuthBaseClient {
         client.get(apiUrl, params, handler);
     }
 
+    public void getUserInfo(String username, AsyncHttpResponseHandler handler){
+        String apiUrl = getApiUrl("/users/show.json");
+        RequestParams params = new RequestParams();
+        params.put("screen_name", username);
+        client.get(apiUrl, params, handler);
+    }
+
     public void getLoggedInUserInfo(AsyncHttpResponseHandler handler){
         String apiUrl = getApiUrl("/account/verify_credentials.json");
         client.get(apiUrl, null, handler);
@@ -58,7 +66,22 @@ public class TwitterClient extends OAuthBaseClient {
         client.post(apiUrl, params, handler);
     }
 
-	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
+    public void getMentionsTimeline(AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("/statuses/mentions_timeline.json");
+        client.get(apiUrl, null, handler);
+    }
+
+    public void getUserTimeline(String username, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("/statuses/user_timeline.json");
+        RequestParams params = null;
+        if(username!=null) {
+            params = new RequestParams();
+            params.put("screen_name", username);
+        }
+        client.get(apiUrl, params, handler);
+    }
+
+	/* 1. Define the endpoint URL with  getApiUrl and pass a relative path to the endpoint
 	 * 	  i.e getApiUrl("statuses/home_timeline.json");
 	 * 2. Define the parameters to pass to the request (query or body)
 	 *    i.e RequestParams params = new RequestParams("foo", "bar");

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yahoo.workmonk.basictwitter"
+    package="com.yahoo.workmonk.advancedtwitter"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -53,7 +53,11 @@
             android:parentActivityName=".TimelineActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.yahoo.workmonk.basictwitter.TimelineActivity" />
+                android:value="com.yahoo.workmonk.advancedtwitter.TimelineActivity" />
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile" >
         </activity>
     </application>
 

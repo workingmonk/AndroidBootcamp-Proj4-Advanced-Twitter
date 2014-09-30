@@ -12,5 +12,6 @@
     <string name="profile_image_content_description">Profile image of twitter user</string>
     <string name="title_activity_compose">New Tweet</string>
     <string name="new_tweet_label">What\'s chirping.....</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 
 </resources>
