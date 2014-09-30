@@ -2,6 +2,8 @@ package com.yahoo.workmonk.advancedtwitter;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -24,32 +26,32 @@ import org.json.JSONObject;
 
 
 public class TimelineActivity extends FragmentActivity {
-    TweetsListFragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         setUpTabs();
-
+        getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55ACEE")));
     }
 
     public void onProfileImageClick(View v){
-//        new TweetsListFragment().onProfileImageClick(v);
         TweetsListFragment abc = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.flContainer);
         abc.onProfileImageClick(v);
-//        TweetsListFragment.onProfileImageClick(v);
     }
 
     private void setUpTabs() {
         ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
         actionBar.setDisplayShowTitleEnabled(true);
+
 
         ActionBar.Tab tab1 = actionBar
                 .newTab()
                 .setText("Home")
-                .setIcon(R.drawable.ic_home)
+                .setIcon(R.drawable.ic_home_blue)
                 .setTag("HomeTimelineFragment")
                 .setTabListener(
                         new FragmentTabListener<HomeTimelineFragment>(R.id.flContainer, this, "first",
@@ -61,7 +63,7 @@ public class TimelineActivity extends FragmentActivity {
         ActionBar.Tab tab2 = actionBar
                 .newTab()
                 .setText("Mentions")
-                .setIcon(R.drawable.ic_mentions)
+                .setIcon(R.drawable.ic_mentions_blue)
                 .setTag("MentionsTimelineFragment")
                 .setTabListener(
                         new FragmentTabListener<MentionsTimelineFragment>(R.id.flContainer, this, "second",

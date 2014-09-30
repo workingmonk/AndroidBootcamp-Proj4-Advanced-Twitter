@@ -1,6 +1,8 @@
 package com.yahoo.workmonk.advancedtwitter;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -24,6 +26,8 @@ public class ProfileActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         String username = getIntent().getStringExtra("username");
+        getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55ACEE")));
         if(username!=null)
             loadProfileInfo(username);
         else

@@ -64,7 +64,6 @@ public class TweetsListFragment extends Fragment{
     }
 
     public void onProfileImageClick(View v){
-        Toast.makeText(getActivity(), "You clicked on the image", Toast.LENGTH_SHORT).show();
         v.findViewById(R.id.ivProfileImage);
         RelativeLayout id = (RelativeLayout) v.getParent();
         TextView tvScreenName = (TextView) id.findViewById(R.id.tvUserName);

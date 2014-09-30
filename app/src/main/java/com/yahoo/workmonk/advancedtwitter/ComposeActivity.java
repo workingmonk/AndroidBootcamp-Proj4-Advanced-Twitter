@@ -2,6 +2,8 @@ package com.yahoo.workmonk.advancedtwitter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,6 +35,8 @@ public class ComposeActivity extends Activity {
         tvScreenName = (TextView) findViewById(R.id.tvScreenName);
         etNewTweet = (EditText) findViewById(R.id.etNewTweet);
         populateUserInfo();
+        getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55ACEE")));
     }
 
     public void populateUserInfo(){
